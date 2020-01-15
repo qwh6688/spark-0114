@@ -12,7 +12,8 @@ object Spark05_Oper4 {
     val sc = new SparkContext(config)
     // flatMap
     val listRDD: RDD[List[Int]] = sc.makeRDD(Array(List(1,2),List(3,4)))
-    val flatMapRDD: RDD[Int] = listRDD.flatMap(datas=>datas)
+    val flatMapRDD: RDD[Int] = listRDD.flatMap(datas=>datas)//
+//    val testRDD: RDD[Nothing] = listRDD.flatMap(x=>List())
     flatMapRDD.collect().foreach(println)
 
 

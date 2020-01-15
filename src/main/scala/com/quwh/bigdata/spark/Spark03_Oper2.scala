@@ -2,7 +2,9 @@ package com.quwh.bigdata.spark
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
-
+/*
+mapPartitions
+ */
 object Spark03_Oper2 {
   def main(args: Array[String]): Unit = {
     val config = new SparkConf().setMaster("local[*]").setAppName("WordCount")
