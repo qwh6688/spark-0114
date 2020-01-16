@@ -14,8 +14,11 @@ object Spark12_Oper11 {
   def main(args: Array[String]): Unit = {
     val config = new SparkConf().setMaster("local[*]").setAppName("WordCount")
     val sc = new SparkContext(config)
-    val listRDD: RDD[Int] = sc.makeRDD(1 to 16, 4)
-
+    val listRDD: RDD[Int] = sc.makeRDD(List(2, 3, 1, 5, 4, 8, 0, 7))
+    val sortByRDD: RDD[Int] = listRDD.sortBy(x => x, true,2)
+//    sortByRDD.collect().foreach(println)
+    sortByRDD.saveAsTextFile("output")
+    sc.stop()
 
 
   }
