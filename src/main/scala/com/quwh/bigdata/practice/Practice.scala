@@ -35,7 +35,7 @@ object Practice {
     //7.对同一个省份所有广告的集合进行排序并取前3条，排序规则为广告点击总数
     val provinceAdTop3: RDD[(String, List[(String, Int)])] = provinceGroup.mapValues {
       x =>
-        //      x.toList.sortWith((x, y) => x._2 > y._2).take(3)
+//            x.toList.sortWith((x, y) => x._2 > y._2).take(3)
         x.toList.sortBy(x => x._2).reverse.take(3)
     }
     provinceAdTop3
