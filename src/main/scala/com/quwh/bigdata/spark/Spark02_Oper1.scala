@@ -10,6 +10,7 @@ object Spark02_Oper1 {
     val config = new SparkConf().setMaster("local[*]").setAppName("WordCount")
     val sc = new SparkContext(config)
     val listRDD: RDD[Int] = sc.makeRDD(1 to 10)
+
 //    listRDD.groupBy()
     //val mapRDD: RDD[Int] = listRDD.map(x=>x*2)
     val mapRDD: RDD[Int] = listRDD.map(_*2)

@@ -28,7 +28,7 @@ object Spark13_Oper12 {
   }
 }
 
-//生命分区器
+//声明分区器
 //继承抽象类 Partitioner
 class MyPartitioner(partitions: Int) extends Partitioner {
   override def numPartitions: Int = {
